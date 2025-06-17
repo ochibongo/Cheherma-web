@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Digital Health | Cheherma Foundation</title>
+{% endblock %}
+
+{% block body %}
+<div class="content py-5">
+  <h1 class="text-center text-white mb-3">Digital Health Access Program</h1>
+  <h4 class="text-center text-white mb-4">
+    When technology meets compassion, healthcare becomes truly universal. 🩺 
+    <strong>Ready to serve?</strong>
+  </h4>
+
+  <div class="container-fluid px-4">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10">
+        <div class="card mb-4 shadow">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="{{ url_for('static', filename='images/telemedicine.webp') }}" class="img-fluid h-100 w-100" style="object-fit: cover;" alt="Digital Health">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title fs-4 text-primary">Bringing Healthcare to the Click of a Button</h5>
+                <p class="card-text">
+                  In a world where distance and lack of resources often stand between people and quality care, Cheherma Foundation’s Digital Health Access Program is breaking barriers.
+                  Through telemedicine, mobile apps, and virtual health education, we connect remote and underserved communities with doctors, nurses, counselors, and specialists — wherever they are.
+                </p>
+
+                <h6 class="mt-3 fs-4 text-primary" >What We Provide:</h6>
+                <ul class="list-unstyled">
+                  <li>Virtual consultations for patients in rural or underserved areas</li>
+                  <li>Digital follow-ups for chronic disease management</li>
+                  <li>Health education via SMS, mobile apps, and online workshops</li>
+                  <li>Remote mental health support and maternal health guidance</li>
+                  <li>Training for local health workers on using digital tools</li>
+                </ul>
+
+                <h6 class="mt-3 fs-4 text-primary" >Our Impact:</h6>
+                <p class="card-text">
+                  Digital health access saves time, reduces travel costs, and ensures timely intervention for preventable diseases. It also relieves pressure on overcrowded local health facilities.
+                </p>
+
+                <h6 class="mt-3 fs-4 text-primary" >How You Can Get Involved:</h6>
+                <ul class="list-unstyled">
+                  <li>Partner with us to expand digital platforms and equipment</li>
+                  <li>Donate tablets, mobile data, or fund training kits</li>
+                  <li>Volunteer as a remote doctor, therapist, or health educator</li>
+                  <li>Sponsor a Telehealth Hub in a rural school or clinic</li>
+                </ul>
+
+                <p class="mt-3 text-dark">
+                  📧 Contact us at: 
+                  <a href="mailto:info@cheherma.org">info@cheherma.org</a> / 
+                  <a href="mailto:cheherma1@gmail.com">cheherma1@gmail.com</a>
+                  or <a href="{{ url_for('contact') }}">Contact Us</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div> <!-- card -->
+      </div> <!-- col -->
+    </div> <!-- row -->
+  </div> <!-- container -->
+</div>
+{% endblock %}

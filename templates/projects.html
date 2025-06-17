@@ -1,0 +1,128 @@
+
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Projects | Chehermaa Foundation</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+  <h1 class="text-center text-white mb-4">Our Projects</h1>
+    <p>At Cheherma Foundation, we believe in action that transforms lives. Our projects are designed to address the most pressing challenges in our communities—ensuring access to healthcare, education, and advocacy for the underserved.</p>
+    <p>Each initiative is built in collaboration with the people we serve, guided by compassion, data, and the drive for long-term impact. From mobile medical camps and student scholarships to digital health and community empowerment programs, our work reflects our commitment to sustainable development and social justice.</p>
+    <h2 class="text-center text-white mb-4">Explore our projects below and discover how we’re making a difference, one community at a time.</h2>
+
+  <!-- 🧩 Projects Cards -->
+<div class="container">
+    <div class="row g-4 justify-content-center">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/medicines.jpg') }}" class="card-img-top" alt="Essential Medicines">
+          <div class="card-body">
+            <h5 class="card-title">Health outreach</h5>
+            <p class="card-text">Free medical and dental camps, mobile clinics, and wellness screenings.</p>
+            <a href="/health" class="btn btn-primary">Learn More</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/education.jpg') }}" class="card-img-top" alt="Education Support">
+          <div class="card-body">
+            <h5 class="card-title">Education Support</h5>
+            <p class="card-text">School supplies distribution, mentorship programs, and scholarship assistance.</p>
+            <a href="/education" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/pharmacy.jpg') }}" class="card-img-top" alt="Community Pharmacy">
+          <div class="card-body">
+            <h5 class="card-title">Community Pharmacy Services</h5>
+            <p class="card-text">Ensuring access to affordable and essential medicines.</p>
+            <a href="/communitypharmacy" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/advocacy.jpg') }}" class="card-img-top" alt="Other Support">
+          <div class="card-body">
+            <h5 class="card-title">Nutrition & Food aid</h5>
+            <p class="card-text">Feeding programs for children & vulnerable families</p>
+            <a href="/food" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+<!-- Card 5 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/dental.jpg') }}" class="card-img-top" alt="Other Support">
+          <div class="card-body">
+            <h5 class="card-title">Advocacy & Rights Awareness:</h5>
+            <p class="card-text">Empowering people through education on health rights and civic engagement.</p>
+            <a href="/dental" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/water.jpeg') }}" class="card-img-top" alt="Community Pharmacy">
+          <div class="card-body">
+            <h5 class="card-title">Clean Water Access</h5>
+            <p class="card-text">Help us fund water stations, Wells, water filters, and hygiene education.</p>
+            <a href="/water" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+      </div>
+           
+         <!-- Card 7 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/telemedicine.webp') }}" class="card-img-top" alt="Community Pharmacy">
+          <div class="card-body">
+            <h5 class="card-title">Digital Health Access:</h5>
+            <p class="card-text">Expanding telemedicine services and digital tools in underserved areas.</p>
+            <a href="/water" class="btn btn-primary">Learn More</a>  
+            </div>
+        </div>
+      </div>
+        <!-- Card 8 -->     
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/banner3.jpg') }}" class="card-img-top" alt="Community Pharmacy">
+            <div class="card-body">
+            <h5 class="card-title">Women & Youth Empowerment:</h5>
+            <p class="card-text">Supporting income-generating projects and leadership training.</p>
+            <a href="/water" class="btn btn-primary">Learn More</a>  
+          </div>
+        </div>
+      </div>
+    <!-- Card 9 -->     
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/ncds.jpg') }}" class="card-img-top" alt="Community Pharmacy">
+            <div class="card-body">
+            <h5 class="card-title">Non communicable diseases prevention & control:</h5>
+            <p class="card-text">Our intervention strategies focus on addressing risk factors, promoting healthy behaviors, and ensuring access to quality care. .</p>
+            <a href="/water" class="btn btn-primary">Learn More</a>  
+          </div>
+        </div>
+      </div>
+      <!-- Add More Cards as Needed -->
+    </div>
+  </div>
+</div>
+
+{% endblock %}

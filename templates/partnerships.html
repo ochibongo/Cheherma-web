@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Partnerships | Cheherma Foundation</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+  <section class="py-5 text-white text-center bg-primary">
+    <div class="container">
+      <h1 class="mb-3">Let’s Build Impact Together</h1>
+      <p class="lead">
+        At Cheherma Foundation, we believe lasting change happens through collaboration. Whether you're a corporation, NGO, institution, or passionate individual — your partnership helps expand access to health, education, and social support in underserved communities.
+      </p>
+    </div>
+  </section>
+
+  <!-- 🧩 Partnership Cards -->
+  <section class="container py-5">
+    <div class="row g-4 justify-content-center">
+      <!-- Individuals -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/medicines.jpg') }}" class="card-img-top" alt="Essential Medicines">
+          <div class="card-body">
+            <h5 class="card-title">For Individuals</h5>
+            <p class="card-text">Join us in transforming communities through partnership-driven impact.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Corporates -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/education.jpg') }}" class="card-img-top" alt="Education Support">
+          <div class="card-body">
+            <h5 class="card-title">Corporate Partners</h5>
+            <p class="card-text">
+              Align your brand with meaningful initiatives. From co-branded programs to employee engagement opportunities, let’s work together to create measurable, community-driven impact.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- NGOs -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/pharmacy.jpg') }}" class="card-img-top" alt="Community Pharmacy">
+          <div class="card-body">
+            <h5 class="card-title">NGOs & Institutions</h5>
+            <p class="card-text">
+              Collaborate with us to amplify local impact. Whether it’s joint programs or shared resources, we believe partnerships are key to sustainable development.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🤝 Partnership Form -->
+  <section id="partnership-form" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Partner With Us</h2>
+      <form action="{{ url_for('partnerships') }}" method="POST" class="p-4 bg-white shadow rounded">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" name="name" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" name="email" class="form-control" required>
+          </div>
+          <!-- Phone Number with Country Code -->
+<div class="row mb-3">
+  <!-- Country Code -->
+  <div class="col-md-3">
+    <label for="country_code" class="form-label">Country Code</label>
+    <select name="country_code" class="form-select" required>
+      <option value="">+Code</option>
+      <option value="+1">+1 (USA/Canada)</option>
+      <option value="+44">+44 (UK)</option>
+      <option value="+254">+254 (Kenya)</option>
+      <option value="+91">+91 (India)</option>
+      <!-- Add more country codes as needed -->
+    </select>
+  </div>
+
+  <!-- Phone Number -->
+  <div class="col-md-3">
+    <label for="phone" class="form-label">Phone Number</label>
+    <input type="tel" name="phone" class="form-control" required pattern="\d{6,15}" title="Enter a valid phone number">
+  </div>
+  <!-- Country Select -->
+  <div class="col-md-6">
+    <label for="country" class="form-label">Country</label>
+    <select name="country" class="form-select" required>
+      <option value="">-- Select Country --</option>
+      <option value="Canada">Canada</option>
+      <option value="United States">United States</option>
+      <option value="Kenya">Kenya</option>
+      <option value="India">India</option>
+      <option value="United Kingdom">United Kingdom</option>
+      <!-- Add more countries as needed -->
+    </select>
+  </div>
+</div>
+
+        </div>
+          <div class="col-md-6">
+            <label for="type" class="form-label">Partnership Type</label>
+            <select name="type" class="form-select" required>
+              <option value="">-- Select Type --</option>
+              <option value="Individual" {% if preselected_type == 'Individual' %}selected{% endif %}>Individual</option>
+              <option value="Corporate" {% if preselected_type == 'Corporate' %}selected{% endif %}>Corporate</option>
+              <option value="NGO/Institution" {% if preselected_type == 'NGO/Institution' %}selected{% endif %}>NGO/Institution</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="message" class="form-label">Message (optional)</label>
+          <textarea name="message" rows="4" class="form-control"></textarea>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-danger px-5">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
+
+<script>
+  function setpartnershipsType(type) {
+    document.querySelector('select[name="type"]').value = type;
+  }
+</script>
+
+
+{% endblock %}
+

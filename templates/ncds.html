@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>NCDs | Cheherma Foundation</title>
+{% endblock %}
+
+{% block body %}
+<div class="content py-5">
+  <h1 class="text-center text-white mb-3">Non-Communicable Diseases (NCDs) Program</h1>
+  <h4 class="text-center text-white mb-4">
+    Prevent. Educate. Empower. 🩺 <strong>Ready to serve?</strong>
+  </h4>
+
+  <div class="container-fluid px-4">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10">
+        <div class="card mb-4 shadow">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="{{ url_for('static', filename='images/ncds.jpg') }}" class="img-fluid h-100 w-100" style="object-fit: cover;" alt="NCD Prevention">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 class="card-title fs-4 text-primary">NCD Prevention and Control</h5>
+                <p class="card-text">
+                  Non-Communicable Diseases (NCDs) like hypertension, diabetes, cancer, respiratory diseases, and cardiovascular conditions are silently claiming lives — especially in under-resourced communities with limited access to care.
+                </p>
+                <p class="card-text">
+                  At Cheherma Foundation, we are taking a stand against NCDs through a multi-layered approach that puts <strong>prevention, early detection, and education</strong> at the forefront.
+                </p>
+
+                <h6 class="mt-3 fs-4 text-primary"><strong> Why It Matters:</strong></h6>
+                <p>
+                  NCDs account for over <strong>70% of global deaths</strong>, yet most are preventable through lifestyle changes, early intervention, and education.
+                </p>
+
+                <h6 class="mt-3 fs-4 text-primary"><strong>🩺 What We Do:</strong></h6>
+                <ul class="list-unstyled">
+                  <li>Community screening camps for blood pressure, glucose, BMI, and cancer</li>
+                  <li>Health education sessions on lifestyle, nutrition, and wellness</li>
+                  <li>Training for local health workers on NCD detection and support</li>
+                  <li>Referral and follow-up for critical or chronic conditions</li>
+                  <li>Youth-led campaigns promoting healthy living</li>
+                </ul>
+
+                <h6 class="mt-3 fs-4 text-primary"><strong>Our Impact:</strong></h6>
+                <p>
+                  Early screenings save lives. Digital health access reduces costs and reaches the underserved. Together, we’re making care accessible and preventing suffering before it starts.
+                </p>
+
+                <h6 class="mt-3 fs-4 text-primary"><strong>Join the Movement:</strong></h6>
+                <ul class="list-unstyled">
+                  <li>Volunteer at upcoming screenings and awareness events</li>
+                  <li>Partner with us for advocacy, training, or research</li>
+                  <li>Donate to support essential diagnostics and outreach</li>
+                </ul>
+
+                <p class="card-text text-primary">
+                   Our next <strong>NCD Awareness Week</strong>: <strong>October 1st–7th</strong>
+                </p>
+
+                <p>
+                   Contact us:<br>
+                  <a href="mailto:info@cheherma.org">info@cheherma.org</a> / 
+                  <a href="mailto:cheherma1@gmail.com">cheherma1@gmail.com</a>
+                  or <a href="{{ url_for('contact') }}">Contact Us</a>
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </div> <!-- card -->
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

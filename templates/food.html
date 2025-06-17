@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <title>Food Program | Cheherma Foundation</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+  <h1 class="text-center text-white mb-4 " >Nutrition & Food Aid</h1>
+  <div class="container-fluid">
+    <div class="row g-4">
+      <div class="col-12">
+        <div class="card h-100 shadow-sm d-flex flex-column border-primary">
+          <div class="card-header bg-primary text-white fs-4">Feeding Programs for Children & Vulnerable Families
+          </div>
+          <div class="card-body d-flex flex-column p-4">
+            <h5 class="card-title text-primary fs-1"></h5>
+            <p class="lead">
+              At Cheherma Foundation, we believe that access to nutritious food is a basic human right. Our Nutrition and Food Aid Program is designed to combat hunger, improve health outcomes, and support vulnerable populations in underserved communities. We provide nutrient-rich meals, food baskets, and educational resources to individuals and families facing food insecurity.
+            </p>
+
+            <hr>
+
+            <h2 class="text-primary mt-4 text-success">What We Do</h2>
+            <h4 class="mt-3">Food Distribution</h4>
+            <ul class="list-unstyled fs-4">
+              <li>Monthly food packages to low-income families</li>
+              <li>Hot meal services for children, seniors, and those experiencing homelessness</li>
+              <li>Emergency food relief during crises and disasters</li>
+            </ul>
+
+            <h4 class="mt-3">Nutrition Education</h4>
+            <ul class="list-unstyled fs-4">
+              <li>Healthy cooking workshops</li>
+              <li>Nutritional counselling and diet planning</li>
+              <li>Educational campaigns on food hygiene and dietary diversity</li>
+            </ul>
+
+            <h4 class="mt-3">Sustainable Support</h4>
+           <ul class="list-unstyled fs-4">
+              <li>Support for community gardens and urban farming</li>
+              <li>Partnerships with local farmers and food banks</li>
+              <li>Advocacy for policies promoting food justice</li>
+            </ul>
+
+            <h2 class="text-primary mt-4">Who We Serve</h2>
+            <ul class="list-unstyled fs-4">
+              <li>Low-income families and single-parent households</li>
+              <li>Elderly individuals on fixed incomes</li>
+              <li>Newcomers, slum dwellers, and marginalized communities</li>
+              <li>School-aged children and youth at risk of malnutrition</li>
+            </ul>
+
+            <h2 class="text-primary mt-4">Program Impact</h2>
+            <p class="text-success fs-4">Since launching the program:</p>
+            <ul class="list-unstyled fs-4">
+              <li>4,200+ food baskets distributed</li>
+              <li>120+ nutrition workshops conducted</li>
+              <li>2,500 individuals reached with direct food aid</li>
+            </ul>
+
+            <h2 class="text-primary mt-4">Get Involved</h2>
+            <p class="text-success fs-4">Support us by:</p>
+            <ul class="list-unstyled fs-4">
+              <li>Donating funds or non-perishable food items</li>
+              <li>Volunteering at food drives and distribution centers</li>
+              <li>Becoming a community nutrition ambassador</li>
+            </ul>
+
+            <h2 class="text-primary mt-4 fs-3">Our Vision</h2>
+            <p class="text-dark fs-4">
+              To build a hunger-free, healthier community where everyone has the knowledge and resources to live a nourished life.
+            </p>
+            <div class="mt-auto text-center">
+              <a href="{{ url_for('contact') }}">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+

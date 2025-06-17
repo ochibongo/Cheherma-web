@@ -1,0 +1,206 @@
+
+{% extends "base.html" %}{% block head %}
+    <title>Home | Cheherma Foundation</title>
+
+{% endblock %}{% block body %}
+<div class="content">
+    <h1>Welcome to Cheherma Foundation</h1>
+<!-- Hero section -->
+<section class="hero-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Text Column -->
+      <div class="col-md-6 mb-4 mb-md-0">
+        <h1 class="display-5 fw-bold">Empowering Communities</h1>
+        <p class="lead">We promote health, education, and social development through grassroots initiatives.</p>
+        <a href="{{ url_for('project_list') }}" class="btn btn-primary btn-lg mt-3">Explore Our Work</a>
+      </div>
+<!-- Image Column -->
+      <div class="col-md-6 text-center">
+        <img src="{{ url_for('static', filename='images/hero-illustration.jpg') }}" alt="Hero Illustration" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Banner section -->
+<section class="program-banners py-5 bg-light">
+  <div class="container">
+    <div class="row text-center">
+      <!-- Health Outreach Card -->
+      <div class="col-md-4 mb-4">
+        <img src="{{ url_for('static', filename='images/health.jpg') }}" 
+             class="img-fluid rounded banner-image" alt="Health">
+        <h4 class="mt-3">Health Outreach</h4>
+        <p>Free screenings, wellness clinics, and awareness campaigns.</p>
+        <a href="{{ url_for('medicalcamp') }}" class="btn btn-warning btn-lg mt-3">Learn More</a>
+      </div>
+      <!-- Education Support Card -->
+      <div class="col-md-4 mb-4">
+        <img src="{{ url_for('static', filename='images/education.jpg') }}" 
+             class="img-fluid rounded banner-image" alt="Education">
+        <h4 class="mt-3">Education Support</h4>
+        <p>Scholarships, mentorship, and community learning centers.</p>
+        <a href="{{ url_for('education') }}" class="btn btn-warning btn-lg mt-3">Learn More</a>
+      </div>
+
+      <!-- Nutrition & Food aid -->
+      <div class="col-md-4 mb-4">
+        <img src="{{ url_for('static', filename='images/advocacy.jpg') }}" 
+             class="img-fluid rounded banner-image" alt="Advocacy">
+        <h4 class="mt-3">Nutrition & Food aid</h4>
+        <p>Feeding programs for children & vulnerable families.</p>
+        <a href="{{ url_for('food') }}" class="btn btn-warning btn-lg mt-3">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- whatsaap float-->
+<a href="https://wa.me/254792581275" 
+   class="whatsapp-float" 
+   target="_blank" 
+   aria-label="Chat on WhatsApp">
+   <i class="bi bi-whatsapp" style="font-size: 2rem;"></i>
+</a>
+
+<!-- id section for dropdown -->
+<section id="mission" class="py-5 text-white text-bg-warning p-3">
+  <div class="container">
+    <h2 class="text-center mb-4 text-primary fw-bold fs-3">Our Mission, Vision & Values</h2>
+    <div class="row">
+      <!-- Mission -->
+      <div class="col-md-4 mb-3 tex">
+        <h4 class="text-dark fw-bold">Our Mission</h4>
+        <p class="text-white fs-4">
+          To empower underserved communities by promoting equitable access to healthcare, education, and social development opportunities.
+        </p>
+      </div>
+      <!-- Vision -->
+      <div class="col-md-4 mb-3 text-white">
+        <h4 class="text-dark fw-bold">Our Vision  </h4>
+        <p class="text text-white fs-4">
+          A healthy, educated, and empowered society where everyone has the tools to thrive and lead change.
+        </p>
+      </div>
+      <!-- Core Values -->
+      <div class="col-md-4 mb-3 text-white">
+  <h4 class="text-dark fw-bold">Our Core Values</h4>
+  <ul style="list-style-type: none; font-size: 24px; color: white;">
+    <li>Compassion</li>
+    <li>Accountability</li>
+    <li>Community Empowerment</li>
+    <li>Equity & Inclusion</li>
+    <li>Integrity</li>
+  </ul>
+</div>
+</section>
+<!-- Get Involved Section Id for Homepage -->
+<section id="getinvolved" class="py-1 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Ways to Get Involved</h2>
+    
+  <div class="row g-4 justify-content-center align-items-stretch">
+
+      <!-- Card 1 -->    
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm d-flex flex-column border-primary">
+          <div class="card-header bg-primary text-white fs-4">Volunteer</div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-primary">Volunteer your time or skills in our programs</h5>
+            <p class="card-text">
+              Volunteers are the heart of Cheherma Foundation. Join a community of changemakers who are committed to building healthier, educated, and empowered communities. Whether you have an hour or a year — your time counts.
+            </p>
+            <div class="mt-auto text-center">
+            <a href="{{ url_for('volunteer') }}#volunteer" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm d-flex flex-column border-primary">
+          <div class="card-header bg-primary text-white fs-4">Donate</div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-primary">Donate to support outreach and supplies</h5>
+            <p class="card-text">
+              Be the healing hands the world needs. Where compassion meets medicine — hope is born.
+            </p>
+            <div class="mt-auto text-center">
+            <a href="{{ url_for('donate') }}#donate" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm d-flex flex-column border-primary">
+          <div class="card-header bg-primary text-white fs-4">Educate</div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-primary">Sponsor a child’s education or treatment</h5>
+            <p class="card-text">
+              Every child deserves a chance to learn, grow, and dream. Your support can rewrite their future.
+            </p>
+            <div class="mt-auto text-center">
+            <a href="{{ url_for('education') }}#education" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm d-flex flex-column border-primary">
+          <div class="card-header bg-primary text-white fs-4">Advocacy</div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-primary">Join awareness and advocacy campaigns</h5>
+            <p class="card-text">
+              Rights awareness is not just education — it’s liberation. Empower voices, protect dignity.
+            </p>
+            <div class="mt-auto text-center">
+            <a href="{{ url_for('advocacy') }}#advocacy" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm d-flex flex-column border-primary">
+          <div class="card-header bg-primary text-white fs-4">Partner with us</div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-primary">Partner with us for research or training</h5>
+            <p class="card-text">
+              Collaborate with us to amplify local impact. Strong partnerships are essential to sustainable development.
+            </p>
+            <div class="mt-auto text-center">
+            <a href="{{ url_for('partnerships') }}#partnerships" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm d-flex flex-column border-primary">
+          <div class="card-header bg-primary text-white fs-4">Mission</div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-primary">Share our mission on social media</h5>
+            <p class="card-text">
+              Help empower underserved communities by spreading our message of equitable access to healthcare, education, and development.
+            </p>
+            <div class="mt-auto text-center">
+              <a href="/" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+</div>
+{% endblock %} 

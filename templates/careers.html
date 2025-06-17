@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Careers | Cheherma Foundation</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+  <h1 class="text-center text-white mb-4 " >Careers form</h1>
+  <div class="container-fluid">
+    <div class="row g-4">
+      <div class="col-12">
+        <div class="card h-100 shadow-sm d-flex flex-column border-primary">
+          <div class="card-header bg-primary text-white fs-4">
+          </div>
+          <div class="card-body d-flex flex-column p-4">
+            <h5 class="card-title text-primary fs-1"></h5>
+            <p class="lead">Interested in joining our team? We’re always looking for passionate individuals! Send us your CV or resume at info@cheherma.org to be added to our talent pool for upcoming opportunities 
+or fill this contact form  for any further inquiries. <br>
+<a href="{{ url_for('contact') }}">Contact Us</a>
+{% endblock %}

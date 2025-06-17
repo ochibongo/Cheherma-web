@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Volunteer | Cheherma Foundation</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+  <section class="py-5 text-white text-center bg-primary">
+    <div class="container">
+      <h1 class="mb-3">Volunteers Are the Heart of Cheherma Foundation</h1>
+      <p class="lead">Join a community of changemakers who are committed to building healthier, educated, and empowered communities. Whether you have an hour or a year — your time counts.</p>
+    </div>
+  </section>
+
+  <!-- 🧩 Volunteer Cards -->
+  <section class="container py-5">
+    <div class="row g-4 justify-content-center">
+      <!-- Individuals -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/medicines.jpg') }}" class="card-img-top" alt="Essential Medicines">
+          <div class="card-body">
+            <h5 class="card-title">For Individuals</h5>
+            <p class="card-text">
+              <Ul class="list-unstyled">
+                <Li>
+                  <H4>One Person. Big Impact.</H4>
+                  <P>Your skills, your time, your passion — they can change lives. Join the Cheherma Foundation as a volunteer and bring hope to underserved communities.</P>
+                </Li>
+                <li>
+                  <h4>You Don't Need to Have Everything — Just the Heart to Help.</h4>
+                  <p>Whether you're a student, professional, retiree, or caregiver — there's a place for you in our mission to promote health, education, and empowerment.</p>
+                <li>
+                  <h4>Volunteering Feeds the Soul.</h4>
+                  <p>Give back in a way that moves you. Support our health camps, teach in our education programs, or lend your voice to advocacy.</p>
+                </li>
+              </Ul>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Groups (Organizations, Teams, Clubs) -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/education.jpg') }}" class="card-img-top" alt="Education Support">
+          <div class="card-body">
+            <h5 class="card-title">Groups (Organizations, Teams, Clubs)</h5>
+            <p class="card-text">
+              <Ul class="list-unstyled">
+                <Li>
+                  <H4>Team Up for Good.</H4>
+                  <P>Whether you're a corporate team, school group, or faith community — volunteering together builds connection, compassion, and community impact.</P>
+                </Li>
+                <li>
+                  <h4>Group Volunteering = Greater Impact.</h4>
+                  <p>Looking for a meaningful team-building experience? Join Cheherma Foundation in making real change through hands-on service opportunities tailored for your group.</p>
+                <li>
+                  <h4>Change Starts With Your Team.</h4>
+                  <p>Partner with us to co-host events, lead awareness drives, or support our local projects. Together, we can do so much more.</p>
+                </li>
+              </Ul>
+            </p>
+          </div>
+        </div>
+      </div>
+  <!-- 🤝 snippet to display feedback to the volunteer Form -->
+   {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+  <!-- 🤝 Volunteer Form -->
+<section id="volunteer" class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-4 text-primary">Volunteer With Us</h2>
+
+    <form action="{{ url_for('volunteer') }}" method="POST" class="p-4 bg-white shadow rounded">
+      <!-- Basic Info -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" name="name" id="name" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" name="email" id="email" class="form-control" required>
+        </div>
+      </div>
+
+      <!-- Phone and Location -->
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <label for="country_code" class="form-label">Country Code</label>
+          <select name="country_code" id="country_code" class="form-select" required>
+            <option value="">+Code</option>
+            <option value="+1">+1 (USA/Canada)</option>
+            <option value="+44">+44 (UK)</option>
+            <option value="+254">+254 (Kenya)</option>
+            <option value="+91">+91 (India)</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" name="phone" id="phone" class="form-control" required pattern="\d{6,15}">
+        </div>
+        <div class="col-md-6">
+          <label for="country" class="form-label">Country</label>
+          <select name="country" id="country" class="form-select" required>
+            <option value="">-- Select Country --</option>
+            <option value="Canada">Canada</option>
+            <option value="United States">United States</option>
+            <option value="Kenya">Kenya</option>
+            <option value="India">India</option>
+            <option value="United Kingdom">United Kingdom</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Volunteering Type -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="type" class="form-label">Volunteering Type</label>
+          <select name="type" id="type" class="form-select" onchange="toggleGroupFields()" required>
+            <option value="">-- Select Type --</option>
+            <option value="Individual">Individual</option>
+            <option value="Groups">Groups (Organizations, Teams, Clubs)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Group Section (Hidden by Default) -->
+      <div id="group-section" class="border rounded p-3 mb-3 bg-light d-none">
+        <h5 class="text-primary">Group Information</h5>
+        <div class="row">
+          <div class="col-md-6">
+            <label for="group_size" class="form-label">Group Size</label>
+            <input type="number" name="group_size" id="group_size" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label for="group_name" class="form-label">Group Name</label>
+            <input type="text" name="group_name" id="group_name" class="form-control">
+          </div>
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div class="mb-3">
+        <label for="message" class="form-label">Message (optional)</label>
+        <textarea name="message" id="message" rows="4" class="form-control"></textarea>
+      </div>
+
+      <!-- Submit -->
+      <div class="text-center">
+        <button type="submit" class="btn btn-danger px-5">Submit</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- 🔁 JavaScript Toggle -->
+<script>
+  function toggleGroupFields() {
+    const type = document.getElementById('type').value;
+    const groupSection = document.getElementById('group-section');
+
+    if (type === 'Groups') {
+      groupSection.classList.remove('d-none');
+    } else {
+      groupSection.classList.add('d-none');
+    }
+  }
+
+  // Optional: auto trigger on page load if preselected
+  document.addEventListener('DOMContentLoaded', toggleGroupFields);
+</script>
+
+{% endblock %}
+

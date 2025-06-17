@@ -1,0 +1,249 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Stories| Chehermaa Foundation</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+  <h1 class="text-center text-white mb-4">Success Stories from the field</h1>
+  <!-- 🧩 Projects Cards -->
+<div class="container">
+    <div class="row g-4 justify-content-center">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-img-wrapper" style="height: 250px; overflow: hidden;">
+          <img src="{{ url_for('static', filename='images/success1.jpg') }}" class="card-img-top" alt="Essential Medicines">
+          </div>
+           <div class="card-header bg-primary text-white ">Medical Outreach Impact</div>
+          <div class="card-body">
+            <h5 class="card-title fw-bold">A Lifesaving Diagnosis and treatment at a free clinic in Kibera slums Nairobi Kenya</h5>
+            <p class="card-text">"I thought it was just fatigue. But the free medical camp helped diagnose me with hypertension. I got timely treatment and now I manage it with medication and lifestyle changes."
+                    — Mariam, 53, kibera slums-Nairobi County
+            <div class="card-footer bg-transparent mt-auto text-center">
+            <a href="{{ url_for('medicalcamp') }}" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-img-wrapper" style="height: 250px; overflow: hidden;">
+          <img src="{{ url_for('static', filename='images/education.jpg') }}" class="card-img-top" alt="Education Support">
+          </div>
+          <div class="card-header bg-primary text-white "> Education Sponsorship</div>
+          <div class="card-body">
+            <h5 class="card-title fw-bold">From Dropout Risk to Future Doctor</h5>
+            <p class="card-text">"I was about to drop out of school due to lack of fees when Cheherma Foundation stepped in. Through their sponsorship program, I completed high school and now I'm in university studying medicine. Their support changed my life."_
+                — Amina, 19, kibera slums-Nairobi County.</p>
+              <div class="card-footer bg-transparent mt-auto text-center">
+            <a href="{{ url_for('education') }}" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-img-wrapper" style="height: 250px; overflow: hidden;">
+          <img src="{{ url_for('static', filename='images/pharmacy.jpg') }}" class="card-img-top" alt="Community Pharmacy">
+          </div>
+           <div class="card-header bg-primary text-white">Essential Medicines, Accessible to All</div>
+          <div class="card-body">
+            <h5 class="card-title fw-bold">No More Missed Doses</h5>
+            <p class="card-text">“I used to spend alot of money to buy medicine for my diabetes and hypertension. Since Cheherma Foundation opened a community pharmacy in our community, I can access affordable medicine locally. I no longer skip doses, and my sugar levels are stable.”
+                — Joseph, 62, Nairobi county</p>
+            <div class="card-footer bg-transparent mt-auto text-center">
+            <a href="{{ url_for('communitypharmacy') }}"  class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-img-wrapper" style="height: 300px; overflow: hidden;">
+          <img src="{{ url_for('static', filename='images/advocacy.jpg') }}" class="card-img-top" alt="Other Support">
+          </div>
+          <div class="card-header bg-primary text-white ">Nutrition food Packs for poor and vulnarable families  </div>
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Little Body, Big Turnaround</h5>
+            <p class="card-text">“I am a single mother and have no stable source of income. The monthly food aid from Cheherma gives me hope. It helps me and my two children live without begging and gives us dignity and hope for tommorow.”
+                    — Mama Teresa, 45, kibera slum.”
+            </p>
+             <div class="card-footer bg-transparent mt-auto text-center">
+          <a href="{{ url_for('food') }}" class="btn btn-primary">Learn More</a>
+          </div>
+          </div>
+        </div>
+      </div>
+<!-- Card 5 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-img-wrapper" style="height: 300px; overflow: hidden;">
+          <img src="{{ url_for('static', filename='images/dental.jpg') }}" class="card-img-top" alt="Other Support">
+          </div>
+          <div class="card-header bg-primary text-white">Free dental camp</div> 
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Dental  & oral health services</h5>
+            <p class="card-text">Participating in Cheherma Foundation’s medical and dental outreach has been a humbling and transformative journey. As a dentist, I’ve always known the importance of oral health, but it wasn’t until I joined the team in underserved areas that I saw how life-changing a simple procedure can be.
+
+From treating severe toothaches to conducting preventive screenings, the impact was immediate and deeply felt. Many patients walked miles just to receive basic dental care—and their resilience and gratitude were overwhelming.
+
+What I appreciate most about Cheherma’s approach is that it’s not just about offering care—it’s about restoring dignity, empowering communities, and promoting long-term health. I’m proud to be part of a team that truly brings smiles in every sense of the word.”<br>
+— Dr. Susan,
+Volunteer Dentist.</p>
+            <div class="card-footer bg-transparent mt-auto text-center">
+            <a href="{{ url_for('advocacy') }}"  class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-img-wrapper" style="height: 300px; overflow: hidden;">
+          <img src="{{ url_for('static', filename='images/hero-illustration.jpg') }}" class="card-img-top" alt="volunteer">
+          </div>
+          <div class="card-header bg-primary text-white ">Volunteer Testimonial</div>
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Volunteering that Changed My Perspective</h5>
+            <p class="card-text">"Volunteering with the Cheherma Foundation has been one of the most rewarding experiences of my career. As a dental assistant, I joined the outreach team during one of the medical and dental camps in a rural community.
+
+We performed countless cleanings, extractions, and oral health screenings—all in a single day. But what struck me most was how grateful and eager the patients were to learn about basic oral hygiene. We weren’t just treating problems; we were preventing future ones by educating families and children.
+
+This experience reminded me why I entered healthcare—to make a real difference. The smiles of relief and appreciation I saw on those days will stay with me forever.”<br>
+
+— Hermanna ,
+Volunteer Dental Assistant</p>
+          <div class="card-footer bg-transparent mt-auto text-center">
+            <a href="{{ url_for('volunteer') }}"  class="btn btn-primary">Learn More</a>
+            </div>
+            </div>
+        </div>
+      </div>
+           
+         <!-- Card 7 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-img-wrapper" style="height: 250px; overflow: hidden;">
+          <img src="{{ url_for('static', filename='images/telemedicine.webp') }}" class="card-img-top" alt="Community Pharmacy">
+          </div>
+          <div class="card-header bg-primary text-white ">Telemedicine</div> 
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Digital Health Access:</h5>
+            <p class="card-text">“At the heart of our mission is a simple yet powerful belief: that quality healthcare should not be a privilege reserved for the few, but a basic right accessible to all. Through our Telemedicine Program, we are breaking down barriers—distance, cost, and time—and bringing compassionate, expert care directly into underserved communities.
+
+            Every virtual consultation is a story of restored hope, a family spared a long journey, a life changed. From remote villages to urban slums, we’ve seen first hand how technology can transform healthcare access.
+
+          I am proud of the dedicated team behind this program—health workers, IT specialists, and volunteers—who work tirelessly to make this vision a reality. As we continue to grow, we invite more partners and supporters to join us in ensuring no one is left behind when it comes to their health.” <br>
+      — Dr. Isaac,(isaac@cheherma.org)
+Telemedicine Program Coordinator.</p>
+            <div class="card-footer bg-transparent mt-auto text-center">
+            <a href="{{ url_for('digitalhealth') }}"  class="btn btn-primary">Learn More</a> 
+            </div> 
+            </div>
+        </div>
+      </div>
+        <!-- Card 8 -->     
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-img-wrapper" style="height: 250px; overflow: hidden;">
+          <img src="{{ url_for('static', filename='images/banner3.jpg') }}" class="card-img-top" alt="Community Pharmacy">
+          </div>
+           <div class="card-header bg-primary text-white">Women Empowerment Training</div> 
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Turning Skills into a Business:</h5>
+            <p class="card-text">"After the vocational training by Cheherma, I started a tailoring business from home. Today, I earn enough to support my children and teach others in my community."
+               — Millicent, 28, Nairobi County 
+            </p>
+            <div class="card-footer bg-transparent mt-auto text-center">
+            <a href="{{ url_for('women') }}" class="btn btn-primary">Learn More</a>  
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Card 9 -->     
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/ncds1.jpg') }}" class="card-img-top" alt="NCDs">
+          <div class="card-header bg-primary text-white ">Non communicable diseases prevention & control</div> 
+            <div class="card-body">
+            <h5 class="card-title fw-bold">A life saving diagnosis :</h5>
+            <p class="card-text">“Before I joined the NCDs awareness sessions, I had no idea that the fatigue and constant thirst I was experiencing were early signs of diabetes. I thought it was just part of getting older. Thanks to the free screening provided by the program, I was diagnosed early and received guidance on how to manage my condition.
+
+The education I received about healthy eating, exercise, and regular checkups has completely changed my life. I feel empowered, informed, and most importantly—hopeful. I now share what I’ve learned with my family and neighbors, encouraging them to take their health seriously too.
+
+I’m truly grateful to the Cheherma Foundation for bringing this life-saving initiative to our community. You didn’t just treat a disease—you gave me a new beginning.”
+
+— Mary Achieng,
+Program Beneficiary, kibera slums-Nairobi.</p>
+          <div class="card-footer bg-transparent mt-auto text-center">
+           <a href="{{ url_for('ncds') }}"  class="btn btn-primary">Learn More</a> 
+           </div>  
+          </div>
+        </div>
+      </div>
+<!-- Card 10 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+         
+          <img src="{{ url_for('static', filename='images/advocacy2.jpg') }}" class="card-img-top" alt="Other Support">
+          
+          <div class="card-header bg-primary text-white ">Advocacy & Rights Awareness</div> 
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Standing Up for My Rights:</h5>
+            <p class="card-text">"Before the community workshops, I didn't know how to speak up. Now I help educate others on their rights to health, education, and dignity. I’ve even formed a local youth advocacy group."<br>
+                — Brian, 21, Nairobi County.</p>
+            <div class="card-footer bg-transparent mt-auto text-center">   
+            <a href="{{ url_for('advocacy') }}"  class="btn btn-primary">Learn More</a>
+            </div> 
+          </div>
+        </div>
+      </div>
+<!-- Card 11 -->     
+      <div class="col-md-4">
+        <div class="card h-100">
+         
+          <img src="{{ url_for('static', filename='images/water1.webp') }}" class="card-img-top" alt="water">
+          <div class="card-header bg-primary text-white fs-4">Cheherma Foundation WASH Project Team</div> 
+            <div class="card-body">
+            <h5 class="card-title fw-bold">Water for life strategy :</h5>
+            <p class="card-text">"The successful completion of our Water and Sanitation Project has brought life-changing improvements to this community. For the first time, families now have access to clean, safe drinking water right in their village, and improved sanitation facilities have significantly reduced waterborne illnesses. We have seen healthier children, improved school attendance, and a renewed sense of dignity among community members. This project is more than just infrastructure—it is hope, health, and a step toward a better future. We are grateful to our partners, volunteers, and the resilient community members who made this success possible."
+</p>
+          <div class="card-footer bg-transparent mt-auto text-center">
+           <a href="{{ url_for('water') }}"  class="btn btn-primary">Learn More</a> 
+           </div>  
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 12 -->     
+      <div class="col-md-4">
+        <div class="card h-100">
+         
+          <img src="{{ url_for('static', filename='images/medical1.jpg') }}" class="card-img-top" alt="Community Pharmacy">
+          <div class="card-header bg-primary text-white"> Better teeth, better health, better smile</div> 
+            <div class="card-body">
+            <h5 class="card-title fw-bold"> Post Medical Mission photo</h5>
+            <p class="card-text">"Participating in this week’s free medical and dental camp has been an incredibly fulfilling experience. We served hundreds of patients—many of whom had never seen a dentist before. It was humbling to see how something as simple as relieving dental pain or offering hygiene education could make such a profound impact. The smiles, the gratitude, and the community’s warmth reminded me why I chose this profession in the first place. Thank you to the Cheherma Foundation for making this possible."
+
+            — Dr. Justin, Volunteer Dentist.</p>
+          <div class="card-footer bg-transparent mt-auto text-center">
+           <a href="{{ url_for('ncds') }}"  class="btn btn-primary">Learn More</a> 
+           </div>  
+          </div>
+        </div>
+      </div>
+      <!-- Add More Cards as Needed -->
+    </div>
+  </div>
+</div>
+
+{% endblock %}

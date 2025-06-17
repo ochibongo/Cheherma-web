@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Education | Cheherma Foundation</title>
+{% endblock %}
+
+{% block body %}
+ 
+<!-- program details -->
+<div class="content">
+  <h1 class="text-center text-white mb-4 " ></h1>
+  <div class="container-fluid">
+    <div class="row g-4">
+      <div class="col-12">
+        <div class="card h-100 shadow-sm d-flex flex-column border-primary">
+          <div class="card-header bg-primary text-white fs-1">Education Promotion & sponsorship
+          </div>
+          <div class="card-body d-flex flex-column p-4">
+            <h5 class="card-title text-primary fs-1"></h5>
+            <p class="lead fs-5 ">
+              CheHerma Student Sponsorship Fund enables the organization to provide access to quality education to selected vulnerable children from extremely poor families within the slum settlements. Under this program, the organization formulates initiatives such as monthly fundraisers and one off donations from well wishers that will enable us to offer educational support from primary school levels to collage levels
+              . Sponsored children are selected through home visits which we at CheHerma do as part of having an understanding of the needs and their wellbeing. Vulnerable children enrolled under this program will also benefit from our healthcare programs.
+      
+            </p>
+
+            <hr>
+
+            <h2 class="text-primary mt-4 ">The main utilization of the funds is to support our school children with</h2>
+            <ul class="list-unstyled fs-4 fw-normal">
+              <li>School uniforms</li>
+              <li>Exercise books and stationery</li>
+              <li>Healthcare and check-ups</li>
+              <li>Sanitary towels for our girls</li>
+              <li>Psycho-social support (mentorship)</li>
+              <li>Empower girls to stay in school and pursue STEM careers</li>
+              <li>Organize community literacy and after-school tutoring programs</li>
+            </ul>    
+            <div class="mt-auto text-md-end">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content py-5">
+  <h1 class="text-center text-white mb-3">No child should defer their dreams because of lack of school fees, books and uniform!</h1>
+  <h4 class="text-center text-white mb-4">
+    🩺 <strong>Ready to serve?</strong> Join our children sponsors team today.
+  </h4>
+
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+      
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow">
+          <img src="{{ url_for('static', filename='images/education2.jpg') }}" class="card-img-top" alt="Essential Medicines">
+          <div class="card-body">
+            <h5 class="card-title text-primary">Education Is the Most Powerful Tool We Can Give</h5>
+            <p class="card-text">
+              At Cheherma Foundation, we believe every child deserves a chance to learn, grow, and dream—regardless of where they were born. In many underserved communities, poverty, gender inequality, and lack of resources continue to rob children of their right to quality education.
+              Your support can rewrite their future.
+            </p>
+            <p class="card-text">
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow">
+          <img src="{{ url_for('static', filename='images/education.jpg') }}" class="card-img-top" alt="Volunteer Roles">
+          <div class="card-body">
+            <h5 class="card-title text-primary">How You Can Make a Difference (ndividual, organization, or corporate sponsor)</h5>
+            <ul style="text-align: left; padding-left: 1rem;">
+              <li>Sponsor a child’s education with just a few dollars a month</li>
+              <li>Donate books, learning materials, or digital devices</li>
+              <li>Volunteer as a mentor or tutor</li>
+              <li>Fundraise to support school construction, scholarships, or teacher training</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+           <!-- contcat info -->
+            <p class="card-text  text-white fs-5">
+             📧 Contact us at:  : 
+               <a href="mailto:info@cheherma.org">info@cheherma.org</a> / 
+              <a href="mailto:cheherma1@gmail.com">cheherma1@gmail.com</a>, 
+             or <a href="{{ url_for('contact') }}">Contact Us</a>
+
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+

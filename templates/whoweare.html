@@ -1,0 +1,40 @@
+
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Projects | Chehermaa Foundation</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+  <h1 class="text-center text-white mb-4">Who we are</h1>
+  <!-- 🧩 who we are Cards -->
+<div class="container-fluid fs-3">
+  <div class="row g-4">
+    <div class="col-12">
+      <div class="card h-100 shadow-sm d-flex flex-column border-primary">
+        <div class="card-header bg-primary text-white fs-1">Non-profit organization</div>
+        <div class="card-body d-flex flex-column p-4">
+          <h5 class="card-title text-primary fs-1"></h5>
+          <p class="lead fs-3 text-primary fw-bold">
+            The Cheherma Foundation is a community-based, non-profit organization dedicated to improving the lives of underserved populations through accessible healthcare, quality education, and sustainable development programs.
+          </p>
+          <p>
+            Established by professionals passionate about equity and inclusion, our foundation works at the grassroots level to close the gap in health and social outcomes. We believe that real change happens when communities are empowered to lead their own transformation.
+          </p>
+          <p>
+            From organizing medical outreach camps to supporting digital health access, education sponsorship, advocacy, and food security initiatives — Cheherma stands as a beacon of hope and impact.
+          </p>
+          <p>
+            We work hand-in-hand with local partners, volunteers, donors, and health professionals to ensure every intervention is people-centered, respectful, and sustainable.
+          </p>
+          <div class="mt-auto text-center">
+            <a href="{{ url_for('whoweare') }}" ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

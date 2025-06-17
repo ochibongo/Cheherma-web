@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Getinvolved | Cheherma Foundation</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+  <h1 class="text-center text-white mb-4">Get Involved</h1>
+    <p>At Cheherma Foundation, we believe that lasting impact begins with people who care. Whether you're a professional, student, advocate, or simply someone with a heart for service, there’s a place for you here.</p>
+      <p>From volunteering and sponsoring children to supporting health outreach, advocacy, or research—your involvement fuels hope and transforms lives.</p>
+    <h2 class="text-center text-white mb-4">Explore our projects below and discover how and in whtatarea yo can mak a difference, one community at a time.</h2>
+
+  <!-- 🧩 Projects Cards -->
+<div class="container">
+    <div class="row g-4 justify-content-center">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/medicines.jpg') }}" class="card-img-top" alt="Essential Medicines">
+          <div class="card-body">
+            <h5 class="card-title">Volunteer your time or skills in our programs</h5>
+            <p class="card-text">Volunteers are the heart of Cheherma Foundation. Join a community of changemakers who are committed to building healthier, educated, and empowered communities. Whether you have an hour or a year — your time counts..</p>
+            <a href="/health" class="btn btn-primary">Learn More</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/education.jpg') }}" class="card-img-top" alt="Education Support">
+          <div class="card-body">
+            <h5 class="card-title">Donate to support outreach and supplies</h5>
+            <p class="card-text">Be the healing hands the world needs. Where compassion meets medicine — hope is born.</p>
+            <a href="/education" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/pharmacy.jpg') }}" class="card-img-top" alt="Community Pharmacy">
+          <div class="card-body">
+            <h5 class="card-title">Sponsor a child’s education or treatment</h5>
+            <p class="card-text">Every child deserves a chance to learn, grow, and dream. Your support can rewrite their future..</p>
+            <a href="/communitypharmacy" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/advocacy.jpg') }}" class="card-img-top" alt="Other Support">
+          <div class="card-body">
+            <h5 class="card-title">Nutrition & Food aid</h5>
+            <p class="card-text">Feeding programs for children & vulnerable families</p>
+            <a href="/food" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+<!-- Card 5 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/dental.jpg') }}" class="card-img-top" alt="Other Support">
+          <div class="card-body">
+            <h5 class="card-title">Join awareness and advocacy campaigns:</h5>
+            <p class="card-text">Rights awareness is not just education — it’s liberation. Empower voices, protect dignity.</p>
+            <a href="/dental" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/water.jpeg') }}" class="card-img-top" alt="Community Pharmacy">
+          <div class="card-body">
+            <h5 class="card-title">Clean Water Access</h5>
+            <p class="card-text">Help us fund water stations, Wells, water filters, and hygiene education.</p>
+            <a href="/water" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+      </div>
+           
+         <!-- Card 7 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/telemedicine.webp') }}" class="card-img-top" alt="Community Pharmacy">
+          <div class="card-body">
+            <h5 class="card-title">Partner with us for research or training:</h5>
+            <p class="card-text">Collaborate with us to amplify local impact. Strong partnerships are essential to sustainable development..</p>
+            <a href="/water" class="btn btn-primary">Learn More</a>  
+            </div>
+        </div>
+      </div>
+        <!-- Card 8 -->     
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/banner3.jpg') }}" class="card-img-top" alt="Community Pharmacy">
+            <div class="card-body">
+            <h5 class="card-title">Share our mission on social media:</h5>
+            <p class="card-text">Help empower underserved communities by spreading our message of equitable access to healthcare, education, and development..</p>
+            <a href="/water" class="btn btn-primary">Learn More</a>  
+          </div>
+        </div>
+      </div>
+    <!-- Card 9 -->     
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/ncds.jpg') }}" class="card-img-top" alt="Community Pharmacy">
+            <div class="card-body">
+            <h5 class="card-title">Non communicable diseases prevention & control:</h5>
+            <p class="card-text">Our intervention strategies focus on addressing risk factors, promoting healthy behaviors, and ensuring access to quality care. .</p>
+            <a href="/water" class="btn btn-primary">Learn More</a>  
+          </div>
+        </div>
+      </div>
+      <!-- Add More Cards as Needed -->
+    </div>
+  </div>
+</div>
+
+{% endblock %}

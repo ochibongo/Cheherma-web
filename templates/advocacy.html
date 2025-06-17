@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Advocacy | Cheherma Foundation</title>
+{% endblock %}
+
+{% block body %}
+<div class="content py-5">
+  <h1 class="text-center text-white mb-3">Advocacy & Rights Awareness</h1>
+  <h4 class="text-center text-white mb-4">
+    Rights awareness is not just education — it’s liberation. 
+    🩺 <strong>Ready to serve?</strong>
+  </h4>
+
+  <div class="container-fluid px-4">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10">
+        <div class="card mb-4 shadow">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="{{ url_for('static', filename='images/advocacy2.jpg') }}" class="img-fluid h-100 w-100" style="object-fit: cover;" alt="Rights Awareness">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title fs-4 text-primary">Empowering voices, protecting dignity.</h5>
+                <p class="card-text">
+                  At Cheherma Foundation, we believe that every individual has the right to health, education, safety, and opportunity — regardless of where they live or who they are.
+                  Through our Advocacy & Rights Awareness Program, we amplify the voices of the underserved and vulnerable, educating communities about their rights and mobilizing action for justice, equity, and dignity.
+                </p>
+
+                <h6 class="mt-3 fs-4 text-primary">What We Do:</h6>
+                <ul class="list-unstyled">
+                  <li>Grassroots awareness campaigns on health, education, and gender rights</li>
+                  <li>Train youth leaders and advocates to drive change</li>
+                  <li>Host workshops on human rights, civic engagement, and policy education</li>
+                  <li>Partner with local governments and global organizations to address systemic injustice</li>
+                  <li>Support survivors of abuse, discrimination, and displacement</li>
+                </ul>
+
+                <h6 class="mt-3">Our Impact Through Empowerment:</h6>
+                <p>
+                  When people know their rights, they are empowered to demand better healthcare, education, safety, and opportunities — creating ripple effects across generations.
+                </p>
+
+                <h6 class="mt-3 fs-4 text-primary">How You Can Support:</h6>
+                <ul class="list-unstyled">
+                  <li>Donate to support legal literacy, advocacy materials, and community outreach</li>
+                  <li>Volunteer to facilitate forums, translate materials, or organize events</li>
+                  <li>Partner with us to scale outreach in remote or marginalized areas</li>
+                </ul>
+
+                <p class="mt-3">
+                  📧 Contact us at:
+                  <a href="mailto:info@cheherma.org">info@cheherma.org</a> /
+                  <a href="mailto:cheherma1@gmail.com">cheherma1@gmail.com</a>
+                  or <a href="{{ url_for('contact') }}">Contact Us</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div> <!-- card -->
+      </div> <!-- col -->
+    </div> <!-- row -->
+  </div> <!-- container -->
+</div>
+{% endblock %}
+

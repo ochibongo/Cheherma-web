@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Community Pharmacy | Cheherma Foundation</title>
+{% endblock %}
+
+{% block body %}
+<div class="content py-5">
+  <h1 class="text-center text-white mb-3">Community Pharmacy</h1>
+  <h4 class="text-center text-white mb-4">
+    🩺 <strong>Ready to serve?</strong> 
+  </h4>
+
+  <div class="container-fluid px-4">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10">
+        <div class="card mb-4 shadow">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="{{ url_for('static', filename='images/pharmacy.jpg') }}" class="img-fluid h-100 w-100" style="object-fit: cover;" alt="Essential Medicines">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title fs-4 text-primary">Bridging the Gap in Access to Essential Medicines</h5>
+                <p class="card-text">
+                  In many communities, life-saving medications remain out of reach due to cost, distance, or lack of local health infrastructure.
+                  At Cheherma Foundation, we believe that no one should suffer or die simply because they can’t afford basic medicine.
+                </p>
+
+                <h6 class="mt-3 fs-4 text-primary">What We Provide:</h6>
+                <ul class="list-unstyled">
+                  <li>Affordable or free essential medications for underserved populations</li>
+                  <li>Health education on safe medicine use and chronic disease management</li>
+                  <li>Support for conditions like hypertension, diabetes, asthma, and more</li>
+                  <li>Referrals to specialized care where needed</li>
+                </ul>
+
+                <h6 class="mt-3 fs-4 text-primary">How You Can Help:</h6>
+                <ul class="list-unstyled">
+                  <li>Donate medicines or fund bulk purchases for our community pharmacy stock</li>
+                  <li>Sponsor a patient’s monthly treatment</li>
+                  <li>Volunteer as a pharmacist, technician, or health educator</li>
+                  <li>Partner with us to expand outreach in rural and underserved areas</li>
+                </ul>
+
+                <p class="mt-3 text-primary">
+                  Together, we’re restoring dignity and health — one prescription at a time.
+                </p>
+
+                <p class="mt-3">
+                  📧 Contact us at: 
+                  <a href="mailto:info@cheherma.org">info@cheherma.org</a> /
+                  <a href="mailto:cheherma1@gmail.com">cheherma1@gmail.com</a>
+                  or <a href="{{ url_for('contact') }}">Contact Us</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div> <!-- card -->
+      </div> <!-- col -->
+    </div> <!-- row -->
+  </div> <!-- container -->
+</div>
+{% endblock %}

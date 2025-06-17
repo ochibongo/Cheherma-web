@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Contact Us | Cheherma Foundation</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+  <h1 class="text-center text-white mb-4 fs-4" ></h1>
+  <div class="container-fluid">
+    <div class="row g-4">
+      <div class="col-12">
+        <div class="card h-100 shadow-sm d-flex flex-column border-primary">
+          <div class="card-header bg-primary text-white fs-4">Contact Form
+          </div>
+          <div class="card-body d-flex flex-column p-4">
+            <h5 class="card-title text-primary fs-1"></h5>
+            <p class="lead">
+              We’d love to hear from you! Whether you have a question, suggestion,  partnership idea, or just want toconnect?—Fill out the form below and our team will reach out to you as soon as possible.
+            </p>
+<form method="POST" action="{{ url_for('contact') }}">
+  <!-- Name Fields -->
+  <div class="row mb-3">
+    <div class="col-md-4">
+      <label for="first_name" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="first_name" name="first_name" required>
+    </div>
+    <div class="col-md-4">
+      <label for="last_name" class="form-label">Last Name</label>
+      <input type="text" class="form-control" id="last_name" name="last_name" required>
+    </div>
+    <div class="col-md-4">
+      <label for="other_name" class="form-label">Other Name</label>
+      <input type="text" class="form-control" id="other_name" name="other_name">
+    </div>
+  </div>
+
+  <!-- Country of Origin -->
+  <div class="mb-3">
+    <label for="country" class="form-label">Country of Origin</label>
+    <input type="text" class="form-control" id="country" name="country" required>
+  </div>
+
+  <!-- Telephone -->
+  <div class="row mb-3">
+  <!-- Telephone -->
+  <div class="col-md-6">
+    <label for="phone" class="form-label">Telephone Contact</label>
+    <input type="tel" class="form-control" id="phone" name="phone" placeholder="+" required>
+  </div>
+
+  <!-- Email -->
+  <div class="col-md-6">
+    <label for="email" class="form-label">Email Address</label>
+    <input type="email" class="form-control" id="email" name="email" required>
+  </div>
+</div>
+
+  <!-- Subject -->
+  <div class="mb-3">
+    <label for="subject" class="form-label">Subject</label>
+    <input type="text" class="form-control" id="subject" name="subject" required>
+  </div>
+
+  <!-- Message -->
+  <div class="mb-3">
+    <label for="message" class="form-label">Message</label>
+    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+  </div>
+
+  <!-- Submit -->
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary">Send Message</button>
+  </div>
+</form>
+{% endblock %}
+       
