@@ -15,7 +15,8 @@ Scss(app)  # Enable SCSS support
 
 
 # Database configuration-sqlachemy
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{os.path.join(basedir, 'project.db')}"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
@@ -256,10 +257,8 @@ def edit(id):
 
 if __name__ == "__main__":
     with app.app_context():
-        db.create_all()
-    port = int(os.environ.get("PORT", 10000))  # Default to 10000 for Render
-    app.run(host="0.0.0.0", port=port)
-
+        db.create_all()  # creates tables for all defined models
+    app.run(debug=True)
 
 
 
