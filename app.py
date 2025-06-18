@@ -6,6 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_scss import Scss
 from datetime import datetime
 
+# Enable logging
 logging.basicConfig(level=logging.DEBUG)
 
 # Initialize Flask app
@@ -15,13 +16,19 @@ Scss(app)  # Enable SCSS support
 
 
 # Database configuration-sqlachemy
-basedir = os.path.abspath(os.path.dirname(__file__))
-app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{os.path.join(basedir, 'project.db')}"
+# Database configuration
+# Use PostgreSQL in production, fallback to SQLite for local dev
+if os.environ.get("FLASK_ENV") == "production":
+    app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
+else:
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
+
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
+# Initialize SQLAlchemy
 db = SQLAlchemy(app)
 
-
-# Databse model-Defining the Task model (like a table)
+# Databse models
 class MyTask(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(100), nullable=False)
@@ -54,8 +61,10 @@ class Donation(db.Model):
     message = db.Column(db.Text)
     date = db.Column(db.DateTime, default=datetime.utcnow)
 
- # Ensure tables are created before any query runs
-
+# Ensure tables are created before any query runs
+# Create database tables
+with app.app_context():
+    db.create_all()
 
 # ---------- Routes ----------
 # Home page with form & task list
@@ -254,11 +263,10 @@ def edit(id):
         return render_template("edit.html", task=task)
 
 
-
+# Deployment setup
 if __name__ == "__main__":
-    with app.app_context():
-        db.create_all()  # creates tables for all defined models
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 10000))  # For Render or default local
+    app.run(host="0.0.0.0", port=port)
 
 
 
