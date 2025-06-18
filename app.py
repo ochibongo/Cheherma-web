@@ -1,9 +1,12 @@
 #imports
+import os
+import logging
 from flask import Flask, render_template, redirect, request, url_for,flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_scss import Scss
 from datetime import datetime
 
+logging.basicConfig(level=logging.DEBUG)
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -50,10 +53,12 @@ class Donation(db.Model):
     message = db.Column(db.Text)
     date = db.Column(db.DateTime, default=datetime.utcnow)
 
+ # Ensure tables are created before any query runs
+
 
 # ---------- Routes ----------
 # Home page with form & task list
-@app.route("/", methods=["GET", "POST"])
+@app.route("/",  methods=["GET", "POST", "HEAD"])
 def index():
     if request.method == "POST":
         current_task = request.form["content"]
@@ -63,12 +68,13 @@ def index():
             db.session.commit()
             return redirect("/")
         except Exception as e:
+            app.logger.error(f"Error in index route: {e}")
             return f"Error saving task: {e}"
     else:
         tasks = MyTask.query.order_by(MyTask.created.desc()).all()
         return render_template("index.html", tasks=tasks)
 
-@app.route('/partnerships', methods=['GET', 'POST'])
+@app.route('/partnerships', methods=["GET", "POST", "HEAD"])
 def partnerships():
     if request.method == 'POST':
         # handle form submission here
@@ -77,7 +83,7 @@ def partnerships():
     return render_template('partnerships.html')
 
 
-@app.route('/volunteer', methods=['GET', 'POST'])
+@app.route('/volunteer', methods=["GET", "POST", "HEAD"])
 def volunteer():
     if request.method == 'POST':
         # Extract form data
@@ -155,7 +161,7 @@ def water():
 def women():
     return render_template("women.html")
 
-@app.route('/medicalcamp', methods=['GET', 'POST'])
+@app.route('/medicalcamp', methods=["GET", "POST", "HEAD"])
 def medicalcamp():
     if request.method == 'POST':
         # handle form submission here
@@ -233,7 +239,7 @@ def delete(id):
         return f"Error deleting task: {e}"
     
 # Edit a task
-@app.route("/edit/<int:id>", methods=["GET", "POST"])
+@app.route("/edit/<int:id>",methods=["GET", "POST", "HEAD"])
 def edit(id):
     task = MyTask.query.get_or_404(id)
     if request.method == "POST":
@@ -246,11 +252,14 @@ def edit(id):
     else:
         return render_template("edit.html", task=task)
 
-# Run the app
+
+
 if __name__ == "__main__":
     with app.app_context():
-        db.create_all()  # Create tables if not already existing
-    app.run(debug=True)
+        db.create_all()
+    port = int(os.environ.get("PORT", 10000))  # Default to 10000 for Render
+    app.run(host="0.0.0.0", port=port)
+
 
 
 
